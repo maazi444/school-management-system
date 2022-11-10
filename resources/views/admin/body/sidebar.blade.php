@@ -1,6 +1,6 @@
 @php
-    $prefix = Request::route()->getPrefix();
-    $route = Route::current()->getName();
+$prefix = Request::route()->getPrefix();
+$route = Route::current()->getName();
 @endphp
 
 <aside class="main-sidebar">
@@ -53,6 +53,23 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
                     <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview {{ ($prefix == '/setups') ? 'active':'' }}">
+                <a href="#">
+                    <i data-feather="mail"></i> <span>Setup Management</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('student.class.view') }}"><i class="ti-more"></i>Student Classes</a></li>
+                    <li><a href="{{ route('student.year.view') }}"><i class="ti-more"></i>Student Year</a></li>
+                    <li><a href="{{ route('student.group.view') }}"><i class="ti-more"></i>Student Group</a></li>
+                    <li><a href="{{ route('student.shift.view') }}"><i class="ti-more"></i>Student Shift</a></li>
+                    <li><a href="{{ route('fee.category.view') }}"><i class="ti-more"></i>Fee Category</a></li>
+                    <li><a href="{{ route('fee.amount.view') }}"><i class="ti-more"></i>Fee Category Amount</a></li>
                 </ul>
             </li>
 
